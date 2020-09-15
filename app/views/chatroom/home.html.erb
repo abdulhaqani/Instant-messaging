@@ -24,16 +24,7 @@
     <div class="ui card fluid raised chatroom">
       <div class="content">
         <div class="ui feed">
-          <% @messages.each do |message|%>
-            <div class="event">
-              <div class="content">
-                <div class="summary">
-                  <h4><i><%= message.user.username %></i>: <%= message.message_body %></h4> 
-                </div>
-              </div>
-            </div>
-          <% end %>
-          
+          <%= render @messages %>
         </div>
       </div>
       <div class="extra content">
