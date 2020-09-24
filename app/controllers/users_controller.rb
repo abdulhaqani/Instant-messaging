@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params.require(:user).permit(:username, :password))
+    byebug
+    @user = User.new(params.require(:users).permit(:username, :password))
     if @user.save
       session[:user_id] = @user.id
       flash[:success] = 'You have successfully signed up'
