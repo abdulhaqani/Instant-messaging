@@ -1,10 +1,11 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   def new
     @user = User.new
   end
 
   def create
-    byebug
     @user = User.new(params.require(:users).permit(:username, :password))
     if @user.save
       session[:user_id] = @user.id
