@@ -1,0 +1,21 @@
+<div class="ui one column grid">
+  <div class="column chat-column">
+    <div class="ui card fluid raised chatroom">
+      <div class="content" id="message-content">
+        <div class="ui feed" id="message-box">
+          <%= render @messages %>
+        </div>
+      </div>
+      <div class="extra content">
+        <%= form_for(@message, html: {class: "ui reply form", role: "form"}, url: message_path, remote: true) do |f| %>
+          <div class="field">
+            <div class="ui fluid icon raised input" style="margin-bottom: 10%">
+              <%= f.text_field :message_body %>
+              <%= f.button '<i class="bordered inverted orange edit icon"></i>'.html_safe %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
